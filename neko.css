@@ -1,4 +1,30 @@
-@CHARSET "UTF-8";
-BUTTON {
-    color: red;
+ul {
+    margin: 0 auto;
+    width: 1300px;
+    text-align: left;
+}
+ 
+ul li {
+    margin: 5px;
+    width: 300px;
+    text-align: left;
+    float: left;
+    display: none;
+    overflow: hidden;
+}
+ 
+/* =======================================
+    ClearFixElements
+======================================= */
+ul:after {
+    content: ".";
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+ 
+ul {
+    display: inline-block;
+    overflow: hidden;
 }

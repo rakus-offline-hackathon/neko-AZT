@@ -3,13 +3,65 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" href="neko.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<link rel="stylesheet" href="neko.css">
+     <script type="text/javascript">
+     function Display(no){
+      
+         if(no == "no1"){
+         	document.getElementById("input").style.display = "block";
+            document.getElementById("output").style.display = "none";
+      
+         }else if(no == "no2"){
+         	document.getElementById("input").style.display = "none";
+            document.getElementById("output").style.display = "block";
+            changeImg();
+      
+         }
+      
+     }
+     </script>
+     <script type="text/javascript">
+     function aaa() {
+        var imglist = new Array(
+           "img/neko1.jpg",
+           "img/neko2.jpg",
+           "img/neko3.jpg",
+           "img/neko4.png" );
+        var selectnum = Math.floor(Math.random() * imglist.length);
+        var output = "<div align=\"center\"><img src=" + imglist[selectnum] + " width=\"300\" ></div>";
+        document.write(output);
+     }
+     </script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+     <script>
+     function changeImg() {
+             var delaySpeed = 800;
+             var fadeSpeed = 1000;
+             $('ul li').each(function(i){
+                 $(this).delay(i*(delaySpeed)).css({display:'block',opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+             });
+     };
+     </script>
 </head>
 <body>
-<!--  今の気分ボタン -->
-	<BUTTON type="submit">絶好調</BUTTON><br>
-	<BUTTON type="submit">凹んでる</BUTTON><br>
-	<BUTTON type="submit">眠い</BUTTON><br>
+	<div id="input" style="display:block;">
+	<!--  今の気分ボタン -->
+		<BUTTON type="submit" onclick="Display('no1')">絶好調</BUTTON><br>
+		<BUTTON type="submit" onclick="Display('no2')">凹んでる</BUTTON><br>
+		<BUTTON type="submit">眠い</BUTTON><br>
+	</div>
+      
+    <div id="output" style="display:none;">
+	<ul>
+		<li><div style="float:left;"><img  height="300" src="img/neko1.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko2.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko3.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko4.png" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko1.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko2.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko3.jpg" alt="" /><div></li>
+		<li><div style="float:left;"><img  height="300" src="img/neko4.png" alt="" /><div></li>
+	</ul>
+    </div>
 </body>
 </html>
